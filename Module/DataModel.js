@@ -1,3 +1,5 @@
+
+// 제품 모델(정보) 관한 Builder
 export const iModel = function (Name) {
     let Model
     let Generation
@@ -28,6 +30,7 @@ export const iModel = function (Name) {
         }
     }
 }
+// 제품 스팩 관한 Builder
 export const ProductPerformance = function () {
     let CPU;
     let RAM;
