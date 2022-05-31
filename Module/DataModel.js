@@ -20,7 +20,7 @@ export const iModel = function (Name) {
             return this
         },
         setPerformance: function (performance) {
-            Performance = performance
+            Performance =  performance
             return this
         },
         build: function () {
