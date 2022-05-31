@@ -1,11 +1,13 @@
+import {iModel} from "../Module/DataModel.js";
+import {ProductPerformance} from "../Module/DataModel.js";
 let MacBook16_Performance =
-    new ProductPerformance().setCPU('M1Pro').setRAM('32G').setScreenSize(16.2).setStorage(1000)
+    new ProductPerformance().setCPU('M1Pro').setRAM('32G').setScreenSize(16.2).setStorage(1000).build()
 let MacBook16 =
-    new iModel('iPhone13')
-        .setModel('A2378')
-        .setColor('Space Gray')
-        .setPerformance(new ProductPerformance().setCPU('M1').setRAM('8G').setScreenSize(12.9).setStorage(128))
-        .setGeneration(5)
+    new iModel('MacBook16')
+        .setModel('A3567')
+        .setColor('Silver')
+        .setPerformance(MacBook16_Performance)
+        .setGeneration(3)
         .build()
 
-console.log(iPad_Pro.Performance.RAM)
+console.log(MacBook16.Performance)
