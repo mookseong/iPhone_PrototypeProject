@@ -1,44 +1,48 @@
-const BuySystem = (function () {
+const BuySystem = (function() {
     function BuySystem() {
-    }
-    BuySystem.prototype.setStrategy = function (buySystem) {
-        this.BuySystem = buySystem;
+        this.buySystem = null;
+        this.Option = null
     };
 
-    BuySystem.prototype.buy = function () {
-        this.BuySystem.buy();
+    BuySystem.prototype.setMenu = function(setBuySystem){
+        this.buySystem = setBuySystem;
     };
+    
+    // BuySystem.prototype.setOption = function(){
+    //     this.buySystem.setOption()
+    // };
 
-
+    BuySystem.prototype.finishBuy = function(){
+        console.log("1. 구매하기 2.장바구니 담기");
+        return 0;
+    };
+    
+    BuySystem.prototype.startUp = function(){
+        this.buySystem.startUp()
+    };
+    
     return BuySystem;
 })();
 
-
-const test = (function () {
-    function test() {
-    }
-
-    test.prototype.buy = function () {
-        console.log('test1');
+const AirPods = (function () {
+    function AirPods() {
     };
-    return test;
+
+    AirPods.prototype.setOption = function(){
+        this.Option = "옵션 테스트 "
+    };
+
+    AirPods.prototype.startUp = function () {
+        console.log("StratUP");
+        this.setOption()
+        console.log(this.Option)
+    };
+
+    return AirPods;
 })();
 
-
-const test2 = (function () {
-    function test2() {
-    }
-
-    test2.prototype.buy = function () {
-        console.log('test2');
-    };
-    return test2;
-})();
 const strat = new BuySystem();
-const tt = new test();
-const ee = new test2();
+const tt = new AirPods();
 
-strat.setStrategy(tt); // 전략을 바꿈
-strat.setStrategy(ee);
-strat.buy(); // 어떤 전략이든 설정된 것을 실행
-// 육로로 이탈리아에 갑니다.
+strat.setMenu(tt);
+strat.startUp()
