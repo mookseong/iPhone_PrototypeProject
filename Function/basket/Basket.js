@@ -18,8 +18,10 @@ function Basket() {
     this.deleteProduct = function() {                   // 물건 삭제
         products.splice(0, products.length);            // 0부터 제품 수량까지 돌면서 삭제
     }
-}
 
+
+}
+console.log(iPad_Pro)
 console.log(iPad_Pro.Name)
 console.log(iPad_Pro.Color)
 console.log(iPad_Pro.Performance.CPU)
