@@ -1,44 +1,56 @@
-const BuySystem = (function () {
-    function BuySystem() {
+import {iPhone13_Option} from "../Data/iPhone.js"
+import {BuySystem} from  "./buyEngine.js"
+import {BuyContext} from  "./buyEngine.js"
+
+const AirPods = (function () {
+    function AirPods() {
     }
-    BuySystem.prototype.setStrategy = function (buySystem) {
-        this.BuySystem = buySystem;
+
+    AirPods.prototype.setOption = function(){
+        this.Option = "옵션 테스트222 "
     };
 
-    BuySystem.prototype.buy = function () {
-        this.BuySystem.buy();
+    AirPods.prototype.setup = function (){
+        this.setOption()
+    }
+
+
+    return AirPods;
+})();
+
+const ListOption = (function () {
+    function BuySystem() {
+        this.buySystem = null;
+        this.Option = null
+    }
+
+    BuySystem.prototype.setMenu = function (setBuySystem) {
+        this.buySystem = setBuySystem;
     };
 
+    BuySystem.prototype.setup = function () {
+        this.buySystem.setup()
+    };
 
     return BuySystem;
 })();
 
 
-const test = (function () {
-    function test() {
-    }
-
-    test.prototype.buy = function () {
-        console.log('test1');
-    };
-    return test;
-})();
+// const strat = new BuySystem();
+// const tt = new AirPods();
+//
+// strat.setMenu(tt);
+// strat.startUp()
 
 
-const test2 = (function () {
-    function test2() {
-    }
+const buySystem = new BuySystem();
+const buyContext = new BuyContext();
 
-    test2.prototype.buy = function () {
-        console.log('test2');
-    };
-    return test2;
-})();
-const strat = new BuySystem();
-const tt = new test();
-const ee = new test2();
+buyContext.option(iPhone13_Option.iPhoneModel);
+buyContext.option(iPhone13_Option.iPhoneStorage);
+buyContext.option(iPhone13_Option.iPhoneColor);
+buyContext.option(iPhone13_Option.trade_in);
 
-strat.setStrategy(tt); // 전략을 바꿈
-strat.setStrategy(ee);
-strat.buy(); // 어떤 전략이든 설정된 것을 실행
-// 육로로 이탈리아에 갑니다.
+
+
+buySystem.execute(buyContext);
