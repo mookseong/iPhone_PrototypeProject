@@ -1,19 +1,10 @@
-//장바구니 관련 코드
-function Product(iName, iPrice) {
-    const name = iName;
-    const price = iPrice;
-    this.getName = function() {
-        return name;
-    }
-    this.getPrice = function() {
-        return price;
-    }
-}
+import {iPad_Pro} from "../../Data/product/iPad.js";
+
 
 function Basket() {
     var products = [];
     this.addProduct = function(amount, product) {       // 물건 추가
-        products.push(...Array(amount).fill(product));  // amount 만큼 배열에 product 추가
+        products.push(...Array(amount).fill(product));  // amount 만큼 배열에 Function 추가
     }
     this.calcTotal = function() {
         console.log("선택한 제품 :", iPhone.getName(), iPad.getName());
@@ -29,12 +20,10 @@ function Basket() {
     }
 }
 
-var iPhone = new Product("iPhone", 150);
-var iPad = new Product("iPad", 130);
-var basket = new Basket();
-basket.addProduct(1, iPhone);
-basket.addProduct(1, iPad);
-basket.finishShopping();
+console.log(iPad_Pro.Name)
+console.log(iPad_Pro.Color)
+console.log(iPad_Pro.Performance.CPU)
+
 
 // 1. 사용자가 원하는대로 프로퍼티 값을 바꿔준 객체를 받아와야 함
 // 2. 그 객체의 name과 price를 뽑아서 basket.js로 가져와야 함

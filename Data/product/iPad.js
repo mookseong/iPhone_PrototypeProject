@@ -1,9 +1,9 @@
-import {iModel} from "../Module/DataModel.js";
-import {ProductPerformance} from "../Module/DataModel.js";
+import {iModel,ProductPerformance} from "../../Model/DataModel.js";
+import {} from "../../Model/DataModel.js";
 
-let iPad_Performance =
+const iPad_Performance =
     new ProductPerformance().setCPU('M1').setRAM('8G').setScreenSize(12.9).setStorage(128).build()
-let iPad_Pro =
+export const iPad_Pro =
     new iModel('iPad Pro')
         .setModel('A2378')
         .setColor('Space Gray')
@@ -12,6 +12,6 @@ let iPad_Pro =
         .build()
 
 
-console.log(iPad_Pro.Performance)
-
+console.log(iPad_Pro.Name)
+console.log(iPad_Pro.Color)
 console.log(iPad_Pro.Performance.CPU)

@@ -1,5 +1,5 @@
-import {iModel} from "../Module/DataModel.js";
-import {ProductPerformance} from "../Module/DataModel.js";
+import {iModel} from "../../Model/DataModel.js";
+import {ProductPerformance} from "../../Model/DataModel.js";
 let MacBook16_Performance =
     new ProductPerformance().setCPU('M1Pro').setRAM('32G').setScreenSize(16.2).setStorage(1000).build()
 let MacBook16 =

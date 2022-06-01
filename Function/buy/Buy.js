@@ -1,6 +1,6 @@
-import {iPhone13_Option} from "../Data/iPhone.js"
-import {BuySystem} from  "./buyEngine.js"
-import {BuyContext} from  "./buyEngine.js"
+import {iPhone13_Option} from "../../Data/product/iPhone.js"
+import {BuySystem} from "./BuyEngine.js"
+import {BuyContext} from "./BuyEngine.js"
 
 const AirPods = (function () {
     function AirPods() {
