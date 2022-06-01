@@ -1,48 +1,56 @@
-const BuySystem = (function() {
-    function BuySystem() {
-        this.buySystem = null;
-        this.Option = null
-    };
-
-    BuySystem.prototype.setMenu = function(setBuySystem){
-        this.buySystem = setBuySystem;
-    };
-    
-    // BuySystem.prototype.setOption = function(){
-    //     this.buySystem.setOption()
-    // };
-
-    BuySystem.prototype.finishBuy = function(){
-        console.log("1. 구매하기 2.장바구니 담기");
-        return 0;
-    };
-    
-    BuySystem.prototype.startUp = function(){
-        this.buySystem.startUp()
-    };
-    
-    return BuySystem;
-})();
+import {iPhone13_Option} from "../Data/iPhone.js"
+import {BuySystem} from  "./buyEngine.js"
+import {BuyContext} from  "./buyEngine.js"
 
 const AirPods = (function () {
     function AirPods() {
-    };
+    }
 
     AirPods.prototype.setOption = function(){
-        this.Option = "옵션 테스트 "
+        this.Option = "옵션 테스트222 "
     };
 
-    AirPods.prototype.startUp = function () {
-        console.log("StratUP");
+    AirPods.prototype.setup = function (){
         this.setOption()
-        console.log(this.Option)
-    };
+    }
+
 
     return AirPods;
 })();
 
-const strat = new BuySystem();
-const tt = new AirPods();
+const ListOption = (function () {
+    function BuySystem() {
+        this.buySystem = null;
+        this.Option = null
+    }
 
-strat.setMenu(tt);
-strat.startUp()
+    BuySystem.prototype.setMenu = function (setBuySystem) {
+        this.buySystem = setBuySystem;
+    };
+
+    BuySystem.prototype.setup = function () {
+        this.buySystem.setup()
+    };
+
+    return BuySystem;
+})();
+
+
+// const strat = new BuySystem();
+// const tt = new AirPods();
+//
+// strat.setMenu(tt);
+// strat.startUp()
+
+
+const buySystem = new BuySystem();
+const buyContext = new BuyContext();
+
+buyContext.option(iPhone13_Option.iPhoneModel);
+buyContext.option(iPhone13_Option.iPhoneStorage);
+buyContext.option(iPhone13_Option.iPhoneColor);
+buyContext.option(iPhone13_Option.trade_in);
+
+
+
+buySystem.execute(buyContext);
