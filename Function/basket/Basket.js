@@ -7,7 +7,7 @@ function Basket() {
         products.push(...Array(amount).fill(product));  // amount 만큼 배열에 Function 추가
     }
     this.calcTotal = function() {
-        console.log("선택한 제품 :", iPhone.getName(), iPad.getName());
+        console.log("선택한 제품 :");
         console.log("총 "+products.length + "개를 선택하였습니다.");
         return products.map(product => product.getPrice()).reduce((a,b) => a+b, 0); // 제품의 가격을 모두 더함
     } // 이 부분에서 커링함수 적용 가능할 거 같음. 생각해보기
