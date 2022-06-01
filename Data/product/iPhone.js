@@ -1,14 +1,15 @@
 import {iModel} from "../../Model/DataModel.js";
-import {ProductPerformance} from "../../Model/DataModel.js"
+import {ProductPerformance} from "../../Model/DataModel.js";
+import _ from '../../Module/inputModule.cjs';
 
 let iPhone_Performance =
     new ProductPerformance().setCPU('A15').setRAM('6G').setScreenSize(6.1).setStorage(128).build()
 let iPhone13 =
     new iModel('iPhone13')
         .setModel('A2378')
-        .setColor('Space Gray')
+        .setColor('Silver')
         .setPerformance(iPhone_Performance)
-        .setGeneration(5)
+        .setGeneration(13)
         .build()
 
 export const iPhone13_Option = {
@@ -26,5 +27,5 @@ export const iPhone13_Option = {
     },
     trade_in: function () {
         console.log('보상 판매할 iPhone이 있으신가요?\n');
-    },
+    }
 };
