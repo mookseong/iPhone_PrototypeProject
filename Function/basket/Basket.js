@@ -1,26 +1,6 @@
 import {iPad_Pro} from "../../Data/product/iPad.js";
 
 
-function Basket() {
-    var products = [];
-    this.addProduct = function(amount, product) {       // 물건 추가
-        products.push(...Array(amount).fill(product));  // amount 만큼 배열에 Function 추가
-    }
-    this.calcTotal = function() {
-        console.log("선택한 제품 :");
-        console.log("총 "+products.length + "개를 선택하였습니다.");
-        return products.map(product => product.getPrice()).reduce((a,b) => a+b, 0); // 제품의 가격을 모두 더함
-    } // 이 부분에서 커링함수 적용 가능할 거 같음. 생각해보기
-    // 총 수량과 총 가격을 const 객체로 만들어보기
-    this.finishShopping = function() {
-        console.log("지불 할 금액은 "+this.calcTotal()+"만원 입니다.");   // 지불할 금액 출력
-    }
-    this.deleteProduct = function() {                   // 물건 삭제
-        products.splice(0, products.length);            // 0부터 제품 수량까지 돌면서 삭제
-    }
-
-
-}
 console.log(iPad_Pro)
 console.log(iPad_Pro.Name)
 console.log(iPad_Pro.Color)
