@@ -65,7 +65,9 @@ var DataManager = (function() {
         if (items === undefined)
             return;
         else {
-            this.items = this.items.filter((_name) => _name !== product);
+            this.items = this.items.filter(function(_name) {
+                return _name.product !== product;
+            });
         }
     };
 
@@ -88,14 +90,33 @@ var DataManager = (function() {
 
 var Products = (function() {
     function Products() {
+        this.viewBasket = [];
     }
     // 받아올 객체를 넣어야 함
     Products.prototype.viewBasket = function(product) {
-        
+        this.viewBasket.push({product : product, ea : 1});
+        product.register(this);
     }
 
-    
+    Products.prototype.plus = function(product) {
+        this.viewBasket.some(function(_name) {
+            console.log(_name.product, product, _name.product === product);
+            if (_name.product === product) {
+                ++_name.ea;
+                return true;
+            }
+        })
+    }
+
+    Products.prototype.minus = function(product) {
+        this.viewBasket.some(function(_name) {
+            console.log(_name.product, product, _name.product === product);
+            if (_name.product === product) {
+                --_name.ea;
+                return true;
+            }
+        })
+    }
 
     return Products;
 })();
-
