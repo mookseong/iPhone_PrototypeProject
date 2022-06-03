@@ -47,3 +47,6 @@ export const iPad_Pro_Option = {
         console.log('보상 판매할 iPhone이 있으신가요?\n');
     }
 };
+
+// 출력 테스트
+console.log(iPad_Pro_5_SpaceGray);
