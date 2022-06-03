@@ -86,3 +86,30 @@ export const AirPods = function (Name) {
         }
     }
 }
+
+// Watch
+export const Watch = function (Name) {
+    let Model;
+    let Generation
+    let Color
+
+    return {
+        setModel : function (model){
+            Model = model
+            return this
+        },
+        setGeneration :function (generation) {
+            Generation = generation
+            return this
+        },
+        setColor : function (color) {
+            Color = color
+            return this
+        },
+        build : function (){
+            return{
+                Name, Generation, Model, Color
+            }
+        }
+    }
+}
