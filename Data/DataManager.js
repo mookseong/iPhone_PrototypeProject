@@ -1,4 +1,4 @@
-var DataManager = (function() {
+export const DataManager = (function() {
     function DataManager() {
         this.dataList = [];
     };

@@ -1,4 +1,4 @@
-export const buyCommander = (function () {
+export const buy = (function () {
     function ListSetup() {
         this.commander =null
         this.commandsOption = [];

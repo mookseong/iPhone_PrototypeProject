@@ -4,7 +4,7 @@ import {buyCommander} from "./commander/BuyCommander.js";
 
 
 const selectOption = function (List) {
-    const buy = new buyCommander();
+    const buy = new buy();
     let commander = new buyCommander();
 
     List(commander)

@@ -1,4 +1,4 @@
-var Basket = (function() {
+export const Basket = (function() {
     function Basket(item) {
         this.item = item;
         this.itemList = [];
