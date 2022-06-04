@@ -2,6 +2,7 @@ var DataManager = (function() {
     function DataManager() {
         this.dataList = [];
     };
+    // 여기도 get set으로 받아야하는지
     DataManager.prototype.register = function(item) {
         this.dataList.push({item : item, amount : 1});
     };
@@ -10,27 +11,29 @@ var DataManager = (function() {
     };
     DataManager.prototype.getDataList = function() {
         return this.dataList;
-    }
-    DataManager.prototype.addItem = function(item) {
-        this.dataList.forEach(function(iName) {
+    };
+    DataManager.prototype.plusAmount = function(item) {
+        this.dataList.some(function(iName) {
             console.log(iName.item, item, iName.item === item);
             if (iName.item === item) {
                 ++iName.amount;
+                return true;
             }
         });
     };
-    DataManager.prototype.deleteItem = function(item) {
-        this.dataList.forEach(function(iName) {
+    DataManager.prototype.minusAmount = function(item) {
+        this.dataList.some(function(iName) {
             console.log(iName.item, item, iName.item === item);
             if (iName.item === item) {
                 --iName.amount;
+                return true;
             }
         });
     };
     DataManager.prototype.notifyAll = function() {
         this.dataList.forEach((allData) => {
             try {
-                allData.update(this);
+                allData.update(dataList);
             } catch {
                 console.log("물건이 없습니다.");
             }
@@ -38,23 +41,3 @@ var DataManager = (function() {
     };
     return DataManager;
 })();
-
-function Product(name) {
-    this.name = name;
-    Product.prototype.update = function(datamanager) {
-        console.log(`${this.name}이(가) 장바구니에 있습니다.`);
-    }
-}
-
-// testCode
-const datamanager = new DataManager();
-
-const iPhone = new Product('iPhone');
-const iPad = new Product('iPad');
-
-datamanager.register(iPhone);
-datamanager.register(iPad);
-datamanager.addItem(iPhone);
-datamanager.unregister(iPhone);
-
-console.log(datamanager.getDataList());
