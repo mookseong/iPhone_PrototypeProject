@@ -1,6 +1,4 @@
 import { DataManager } from "../../Data/DataManager.js";
-// <<<비상>>> : DataManager => 모듈을 읽어올 수 없음
-
 
 // 제품 삭제, 리스트 보여주기 (둘 다 DB매니저랑 연결해서 DB매니저에서 기능하도록)
 export const Basket = (function() {

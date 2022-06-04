@@ -3,8 +3,7 @@ import {iModel} from "../Model/DataModel.js";
 
 // 제품 등록, 제품 삭제, 리스트 보여주기
 export const DataManager = (function() {
-    function DataManager(data) {
-        item = data ? data : '';
+    function DataManager() {
         this.dataList = [];
     };
     DataManager.prototype.register = function(item) {
@@ -31,7 +30,7 @@ export const DataManager = (function() {
 const Product = (function() {
     function Product(name) {
         this.name = name;
-    }
+    };
     Product.prototype.update = function() {
         console.log(`${this.name}이 장바구니에 있습니다.`)
     }
