@@ -1,34 +1,19 @@
+import { DataManager } from "../../Data/DataManager.js";
+// <<<비상>>> : DataManager => 모듈을 읽어올 수 없음
+
+
+// 제품 삭제, 리스트 보여주기 (둘 다 DB매니저랑 연결해서 DB매니저에서 기능하도록)
 export const Basket = (function() {
     function Basket(item) {
         this.item = item;
-        this.itemList = [];
     };
-    Basket.prototype.getItem = function() {
-        return this._item;
+    // 데이터를 지워야 할 때 DB매니저의 unregister 함수를 호출함
+    Basket.prototype.deleteItem = function(item) {
+        item.unregister(this);
     };
-    Basket.prototype.setItem = function(item) {
-        if(typeof item != 'string') {
-            return alert("잘 못 입력하였습니다.");
-        }
-        return this._item = item;
+    Basket.prototype.showList  = function() {
+        return DataManager.prototype.getDataList(); // DataManager를 생성자로 받은 객체.getDataList로 호출해야 할 듯
     }
-    Basket.prototype.update = function(datamanager) {
-        console.log(`${this.name}이(가) 장바구니에 있습니다.`);
-    };
-    Basket.prototype.thisPlus = function() {
-        var self = this;
-        this.itemList.forEach(function(thisItem) {
-            thisItem.plusAmount(self);
-            return true;
-        });
-    };
-    Basket.prototype.thisMinus = function() {
-        var self = this;
-        this.itemList.forEach(function(thisItem) {
-            thisItem.minusAmount(self);
-            return true;
-        });
-    };
     return Basket;
 })();
 
