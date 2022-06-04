@@ -17,7 +17,7 @@ export const iPhone13_Option = {
         console.log('1.iPhone 13 mini - ₩950,000부터\n2.iPhone 13 - ₩1,090,000부터\n');
     },
     iPhoneColor: function () {
-        console.log("맘에 드는 마감을 선택하세요.")
+        console.log("맘에 드는 마감을 선택하세요.");
         console.log('1.그린\t2.핑크\n3.블루\t4.미드나이트\n5.스타라이트\t6.(PRODUCT)RED\n');
     },
     iPhoneStorage: function () {
@@ -28,3 +28,6 @@ export const iPhone13_Option = {
         console.log('보상 판매할 iPhone이 있으신가요?\n');
     }
 };
+
+// 출력 테스트
+console.log(iPhone13)

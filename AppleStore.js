@@ -1,5 +1,5 @@
-import {iModel} from "./Model/DataModel.js";
-import {ProductPerformance} from "./Model/DataModel.js";
+import {iModel, ProductPerformance} from "../../Model/DataModel.js";
+
 
 
 let iPad_Performance = new ProductPerformance().setCPU('M1').setRAM('8G').setScreenSize(12.9).setStorage(128)

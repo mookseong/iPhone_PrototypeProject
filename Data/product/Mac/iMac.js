@@ -1,6 +1,6 @@
 import {iModel, ProductPerformance} from "../../../Model/DataModel.js";
 
-const imacList = function () {
+const iMacList = function () {
     const iMac_Performance = new ProductPerformance()
         .setCPU('M1 8CPU_8GPU')
         .setRAM('8G')
@@ -37,5 +37,5 @@ const imacList = function () {
 }
 
 //테스트 코드
-console.log(new imacList().iMac_low)
+console.log(new iMacList().iMac_low)
 
