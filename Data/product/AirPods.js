@@ -18,6 +18,3 @@ export const AirPod_Option = {
     }
 };
 
-//출력 테스트
-console.log(AirPod1);
-

@@ -1,43 +1,45 @@
-
-
-export const BuySystem = (function () {
+export const buySystem = (function () {
     function BuySystem() {
+        this.buycmmander =null
+
     }
 
-    BuySystem.prototype.select = function (context) {
-        context.execute();
+    BuySystem.prototype.setCommands = function (commander) {
+        this.buycmmander = commander
     };
 
-    BuySystem.prototype.buy = function (context) {
-        context.buy();
-    }
+    BuySystem.prototype.select = function () {
+        this.buycmmander.executeOption();
+    };
+
+    BuySystem.prototype.buy = function () {
+        this.buycmmander.buy();
+    };
 
     return BuySystem;
 })();
 
-export const BuyContext = (function () {
+export const buyCommander = (function () {
     function ListSetup() {
-        this.BuyContext = null
         this.commands = [];
-
+        this.selectoption = [];
     }
 
     ListSetup.prototype.buy = function () {
-        console.log("(선택한 옵션 보여준다)")
-        console.log("1.구매하기\t2.장바구니 추가")
+        console.log("(선택한 옵션 보여준다)");
+        console.log("1.구매하기\t2.장바구니 추가");
 
     };
 
-    ListSetup.prototype.execute = function () {
-        this.commands.forEach(function (context) {
-            context();
-
+    ListSetup.prototype.executeOption = function () {
+        this.commands.forEach(function (commander) {
+            commander();
         });
     };
 
-    ListSetup.prototype.option = function (context, args) {
+    ListSetup.prototype.option = function (commander, args) {
         this.commands.push(function () {
-            context.call(null, args);
+            commander.call(null, args);
         });
     };
 

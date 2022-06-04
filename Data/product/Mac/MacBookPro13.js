@@ -14,6 +14,7 @@ const Macbook13List =function () {
                     .build())
             .setGeneration(2020)
             .build()
+
     this.MacBook_Pro13_high =
         new iModel('MacBook_Pro13')
             .setModel('MacBookPro17,1')

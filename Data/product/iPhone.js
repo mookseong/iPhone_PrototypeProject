@@ -1,6 +1,5 @@
 import {iModel} from "../../Model/DataModel.js";
 import {ProductPerformance} from "../../Model/DataModel.js";
-import _ from '../../Module/inputModule.cjs';
 
 let iPhone_Performance =
     new ProductPerformance().setCPU('A15').setRAM('6G').setScreenSize(6.1).setStorage(128).build()

@@ -18,7 +18,7 @@ const imacList = function () {
                     .setScreenSize(24)
                     .setStorage(256).build())
             .setGeneration(2020)
-            .build()
+            .build();
 
     this.iMac_middle =
         new iModel('iMac')
@@ -26,15 +26,14 @@ const imacList = function () {
             .setColor('Silver')
             .setPerformance(iMac_Performance)
             .setGeneration(2020)
-            .build()
+            .build();
     this.iMac_high =
         new iModel('iMac')
             .setModel('iMac21,1')
             .setColor('Silver')
             .setPerformance(iMac_Performance)
             .setGeneration(2020)
-            .build()
-
+            .build();
 }
 
 //테스트 코드
