@@ -1,9 +1,10 @@
-import {buySystem, buyCommander} from "./BuyEngine.js"
-import {List_iPhone13} from "./BuyOptionList.js";
+import {List_iPhone13} from "./option/BuyOptionList.js";
+import {buyCommander} from "./commander/BuyCommander.js";
+
 
 
 const selectOption = function (List) {
-    const buy = new buySystem();
+    const buy = new buyCommander();
     let commander = new buyCommander();
 
     List(commander)
