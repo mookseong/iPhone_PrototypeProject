@@ -13,6 +13,7 @@ const Macbook16List = function () {
                     .setStorage(512).build())
             .setGeneration(2021)
             .build()
+
     this.MacBook_Pro16_middle =
         new iModel('MacBook_Pro16')
             .setModel('MacBookPro18,1')
@@ -25,6 +26,7 @@ const Macbook16List = function () {
                     .setStorage(1000).build())
             .setGeneration(2021)
             .build()
+
     this.MacBook_Pro16_high =
         new iModel('MacBook_Pro16')
             .setModel('MacBookPro18,1')

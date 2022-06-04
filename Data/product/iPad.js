@@ -2,7 +2,13 @@ import {iModel, ProductPerformance} from "../../Model/DataModel.js";
 
 
 const iPad_Performance =
-    new ProductPerformance().setCPU('M1').setRAM('8G').setScreenSize(12.9).setStorage(128).build()
+    new ProductPerformance()
+        .setCPU('M1')
+        .setRAM('8G')
+        .setScreenSize(12.9)
+        .setStorage(128)
+        .build()
+
 export const iPad_Pro_5_SpaceGray =
     new iModel('12.9형 iPad Pro(5세대)')
         .setModel('A2378')
@@ -10,6 +16,7 @@ export const iPad_Pro_5_SpaceGray =
         .setPerformance(iPad_Performance)
         .setGeneration(5)
         .build()
+
 export const iPad_Pro_5_Silver =
     new iModel('12.9형 iPad Pro(5세대)')
         .setModel('A2378')

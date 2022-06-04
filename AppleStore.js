@@ -10,5 +10,3 @@ let iPad_Pro =
         .setPerformance(iPad_Performance)
         .setGeneration(5)
         .build()
-
-console.log(iPad_Pro)

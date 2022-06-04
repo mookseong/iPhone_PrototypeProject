@@ -1,15 +1,15 @@
-import {iPhone13_Option} from "../../Data/product/iPhone.js"
-import {BuySystem, BuyContext} from "./BuyEngine.js"
+import {List_iPhone13} from "./option/BuyOptionList.js";
+import {buyCommander} from "./commander/BuyCommander.js";
 
-const List_iPhone13= function iPhone(Context) {
-    Context.option(iPhone13_Option.iPhoneModel);
-    Context.option(iPhone13_Option.iPhoneStorage);
-    Context.option(iPhone13_Option.iPhoneColor);
-    Context.option(iPhone13_Option.trade_in);
+
+
+const selectOption = function (List) {
+    const buy = new buyCommander();
+    let commander = new buyCommander();
+
+    List(commander)
+    buy.select(commander);
+    buy.buy(commander);
 }
 
-const buySystem = new BuySystem();
-const buyContext = new BuyContext();
-
-List_iPhone13(buyContext)
-buySystem.select(buyContext);
+selectOption(List_iPhone13)

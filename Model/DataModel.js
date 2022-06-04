@@ -67,20 +67,20 @@ export const AirPods = function (Name) {
     let Color = 'White'
 
     return {
-        setModel : function (model){
-            Model = model
-            return this
+        setModel: function(model) {
+            Model = model;
+            return this;
         },
-        setGeneration :function (generation) {
+        setGeneration: function(generation) {
             Generation = generation
             return this
         },
-        setColor : function (color) {
+        setColor: function (color) {
             Color = color
             return this
         },
-        build : function (){
-            return{
+        build: function() {
+            return {
                 Name, Generation, Model, Color
             }
         }
