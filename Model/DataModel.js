@@ -61,6 +61,7 @@ export const ProductPerformance = function () {
         }
     }
 }
+
 export const AirPods = function (Name) {
     let Model;
     let Generation

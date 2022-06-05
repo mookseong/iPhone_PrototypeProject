@@ -4,7 +4,6 @@ import {iModel} from "../Model/DataModel.js";
 // 제품 등록, 제품 삭제, 리스트 보여주기
 export const DataManager = (function() {
     function DataManager(data) {
-        item = data ? data : '';
         this.dataList = [];
     };
     DataManager.prototype.register = function(item) {
