@@ -3,7 +3,7 @@ import {ProductPerformance} from "../../Model/DataModel.js";
 
 let iPhone_Performance =
     new ProductPerformance().setCPU('A15').setRAM('6G').setScreenSize(6.1).setStorage(128).build()
-let iPhone13 =
+export const iPhone13 =
     new iModel('iPhone13')
         .setModel('A2378')
         .setColor('Silver')

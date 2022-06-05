@@ -1,6 +1,6 @@
 export const buyCommander = (function () {
     function BuySystem() {
-        this.buycmmander =null
+        this.buycmmander =null  // buycommander(?)
 
     }
 

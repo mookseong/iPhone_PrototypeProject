@@ -1,8 +1,8 @@
 export const buy = (function () {
-    function ListSetup() {
+    function ListSetup() {      // ListSetUp (?)
         this.commander =null
         this.commandsOption = [];
-        this.selectoption = [];
+        this.selectoption = []; //selectOption(?)
     }
 
     ListSetup.prototype.setCommander = function (commander) {

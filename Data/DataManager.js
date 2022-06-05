@@ -1,5 +1,5 @@
-import { Basket } from "../Function/basket/Basket.js";
-import {iModel} from "../Model/DataModel.js";
+// DB 매니저에서 iPhone13 받아지는지 확인하는 테스트 코드 작성하기
+import { iPhone13, iPhone13_Option } from "./product/iPhone.js";
 
 // 제품 등록, 제품 삭제, 리스트 보여주기
 export const DataManager = (function() {
@@ -37,5 +37,4 @@ const Product = (function() {
     return Product;
 })();
 
-
-
+console.log(iPhone13_Option)

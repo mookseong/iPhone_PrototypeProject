@@ -3,7 +3,7 @@ import {buyCommander} from "./commander/BuyCommander.js";
 
 
 
-const selectOption = function (List) {
+const SelectOption = function (List) {
     const buy = new buy();
     let commander = new buyCommander();
 
@@ -12,4 +12,4 @@ const selectOption = function (List) {
     buy.buy(commander);
 }
 
-selectOption(List_iPhone13)
+SelectOption(List_iPhone13)
