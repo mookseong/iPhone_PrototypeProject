@@ -10,7 +10,7 @@ export const BuyStrategy = (function () {
         this.strategy.execute();
     };
     BuyOption.prototype.buy = function () {
-        this.strategy.buy();
+        console.log("구매가 완료되었습니다.");
     };
     return BuyOption;
 })();

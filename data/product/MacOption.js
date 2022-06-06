@@ -15,8 +15,7 @@ export const Mac_Option = {
                 console.log('1.3.5GHz 8코어 Intel Xeon W 프로세서(최대 4.0GHz Turbo Boost)\t');
                 break;
         }
-    },
-    MacRam: function (Model) {
+    }, MacRam: function (Model) {
         console.log("메모리 선택하기");
         switch (Model) {
             case "Ram_8_16":
@@ -29,24 +28,19 @@ export const Mac_Option = {
                 console.log('1.32G 램 옵션 \t2.64G 램 옵션)\n')
                 break;
             case "mac_pro":
-                console.log(
-                    '1.32GB(4x8GB) DDR4 ECC \t2.48GB(6x8GB) DDR4 ECC\n')
+                console.log('1.32GB(4x8GB) DDR4 ECC \t2.48GB(6x8GB) DDR4 ECC\n')
                 break;
         }
-    },
-    MacColor: function () {
+    }, MacColor: function () {
         console.log('원하는 용량을 선택하세요.');
         console.log('1.128G \t2.256G "\n3.512G\t4.1Tb\n5. 2TB\n');
-    },
-    MacProVideo: function () {
+    }, MacProVideo: function () {
         console.log('원하는 그래픽을 선택하세요.');
         console.log('1.Radeon Pro W5500X(8GB GDDR6 메모리) \t2.Radeon Pro W6600X(8GB GDDR6 메모리)\n');
-    },
-    MacStorage: function () {
+    }, MacStorage: function () {
         console.log('원하는 용량을 선택하세요.');
         console.log('1.128G \t2.256G "\n3.512G\t4.1Tb\n5. 2TB\n');
-    },
-    trade_in: function () {
+    }, trade_in: function () {
         console.log('보상 판매할 iPhone이 있으신가요?\n');
     }
 };

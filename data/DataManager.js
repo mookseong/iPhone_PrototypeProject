@@ -2,7 +2,7 @@
 export const DataManager = (function() {
     function DataManager() {
         this.dataList = [];
-    };
+    }
     DataManager.prototype.register = function(item) {
         this.dataList.push(item);
     }

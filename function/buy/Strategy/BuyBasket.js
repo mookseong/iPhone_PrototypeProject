@@ -6,9 +6,6 @@ export const BuyBasket= (function () {
     BuyBasket.prototype.execute = function () {
 
     };
-    BuyBasket.prototype.buy = function () {
-        console.log("구매가 완료되었습니다.");
-    };
 
     return BuyBasket;
 })();

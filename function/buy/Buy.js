@@ -1,12 +1,12 @@
 import {BuyOption} from "./Strategy/BuyOption.js";
 import {BuyStrategy} from "./Strategy/BuyStrategy.js";
-import {List_iPhone13} from "../../Data/option/iPhoneList.js";
-import {List_iPad} from "../../Data/option/iPadList.js";
-import {List_MacBookAir} from "../../Data/option/MacbookList.js";
-import {List_AirPods} from "../../Data/option/AirpodList.js";
+import {List_iPhone13} from "./option/iPhoneList.js";
+import {List_iPad} from "./option/iPadList.js";
+import {List_MacBook} from "./option/MacbookList.js";
+import {List_AirPods} from "./option/AirpodList.js";
+import {BuyBasket} from "./Strategy/BuyBasket.js";
 
 const buyStrategy = new BuyStrategy();
-
 
 export const Option = function (model){
     const buyOption = new BuyOption();
@@ -18,7 +18,7 @@ export const Option = function (model){
             List_iPad(buyOption);
             break;
         case "Mac" :
-            List_MacBookAir(buyOption);
+            List_MacBook(buyOption);
             break;
         case "AirPod" :
             List_AirPods(buyOption);
@@ -30,5 +30,14 @@ export const Option = function (model){
     buyStrategy.execute(buyOption);
     buyStrategy.buy();
 }
+export const buyS = function (model){
+    const buyBasket = new BuyBasket();
+
+    buyStrategy.setStrategy(buyBasket);
+    buyStrategy.execute(buyBasket);
+    buyStrategy.buy();
+}
+
+
 
 Option("iPhone")

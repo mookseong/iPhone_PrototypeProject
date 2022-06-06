@@ -1,4 +1,4 @@
-import {iModel, ProductPerformance} from "../../../Model/DataModel.js";
+import {iModel, ProductPerformance} from "../../model/DataModel.js";
 
 const iMacList = function () {
     const iMac_Performance = new ProductPerformance()
@@ -35,7 +35,3 @@ const iMacList = function () {
             .setGeneration(2020)
             .build();
 }
-
-//테스트 코드
-console.log(new iMacList().iMac_low)
-
