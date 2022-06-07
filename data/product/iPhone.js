@@ -1,18 +1,4 @@
-import {iModel} from "../../model/DataModel.js";
-import {ProductPerformance} from "../../model/DataModel.js";
 import {JsonInfo} from "../../function/json/JsonRead.js";
-
-export const iPhone_Performance = new ProductPerformance()
-    .setCPU('A15')
-    .setRAM('6G')
-    .setScreenSize(6.1)
-    .setStorage(128).build();
-export const iPhone13 = new iModel('iPhone13')
-    .setModel('A2378')
-    .setColor('Silver')
-    .setPerformance(iPhone_Performance)
-    .setGeneration(13).build();
-
 
 
 export const iPhone13_Option = {

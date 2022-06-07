@@ -1,7 +1,5 @@
 import {Watch} from "../../model/DataModel.js";
 
-const Watch7 = Watch("Watch7").setModel("A1346").setGeneration(7).setColor('Silver').build();
-
 export const Watch_Option = {
     WatchModel: function () {
         const model = {
