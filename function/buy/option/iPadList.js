@@ -1,6 +1,6 @@
 import {iPad_Pro_Option} from "../../../data/product/iPad.js";
 
-export const List_iPad= function(commander) {
+export const iPadList= function(commander) {
     commander.option(iPad_Pro_Option.iPadModel);
     commander.option(iPad_Pro_Option.iPadColor);
     commander.option(iPad_Pro_Option.iPadStorage);

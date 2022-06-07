@@ -1,4 +1,4 @@
-import {iModel, ProductPerformance} from "../../model/DataModel.js";
+import {iModel, ProductPerformanceModel} from "../../model/DataModel.js";
 
 const MacbookAirList = function () {
 

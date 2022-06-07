@@ -31,7 +31,7 @@ export const iModel = function (Name) {
     }
 }
 // 제품 스팩 관한 Builder
-export const ProductPerformance = function () {
+export const ProductPerformanceModel = function () {
     let CPU;
     let RAM;
     let Storage;
@@ -62,7 +62,7 @@ export const ProductPerformance = function () {
     }
 }
 
-export const AirPods = function (Name) {
+export const AirPodModel = function (Name) {
     let Model;
     let Generation
     let Color = 'White'
@@ -89,7 +89,7 @@ export const AirPods = function (Name) {
 }
 
 // Watch
-export const Watch = function (Name) {
+export const WatchModel = function (Name) {
     let Model;
     let Generation
     let Color

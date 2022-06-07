@@ -1,4 +1,4 @@
-import {Watch} from "../../model/DataModel.js";
+import {WatchModel} from "../../model/DataModel.js";
 
 export const Watch_Option = {
     WatchModel: function () {

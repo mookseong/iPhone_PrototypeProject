@@ -1,9 +1,9 @@
 import {BuyOption} from "./Strategy/BuyOption.js";
 import {BuyStrategy} from "./Strategy/BuyStrategy.js";
-import {List_iPhone13} from "./option/iPhoneList.js";
-import {List_iPad} from "./option/iPadList.js";
-import {List_MacBook} from "./option/MacbookList.js";
-import {List_AirPods} from "./option/AirpodList.js";
+import {iPhone13List} from "./option/iPhoneList.js";
+import {iPadList} from "./option/iPadList.js";
+import {MacBookList} from "./option/MacbookList.js";
+import {AirPodsList} from "./option/AirpodList.js";
 import {BuyBasket} from "./Strategy/BuyBasket.js";
 
 const buyStrategy = new BuyStrategy();
@@ -12,16 +12,16 @@ export const Option = function (model){
     const buyOption = new BuyOption();
     switch (model) {
         case "iPhone" :
-            List_iPhone13(buyOption);
+            iPhone13List(buyOption);
             break;
         case "iPad" :
-            List_iPad(buyOption);
+            iPadList(buyOption);
             break;
         case "Mac" :
-            List_MacBook(buyOption);
+            MacBookList(buyOption);
             break;
         case "AirPod" :
-            List_AirPods(buyOption);
+            AirPodsList(buyOption);
             break;
         default :
             console.log("(무언가 잘못된 값이 들어온것 같습니다)");
@@ -30,7 +30,7 @@ export const Option = function (model){
     buyStrategy.execute(buyOption);
     buyStrategy.buy();
 }
-export const buyS = function (model){
+export const buySystem = function (model){
     const buyBasket = new BuyBasket();
 
     buyStrategy.setStrategy(buyBasket);
@@ -38,6 +38,4 @@ export const buyS = function (model){
     buyStrategy.buy();
 }
 
-
-
-Option("iPhone")
+Option("iPad")
