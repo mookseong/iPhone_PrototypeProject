@@ -5,17 +5,16 @@
 // 사용자의 직접 접근을 basket으로 제한하기 위함
 export const Basket = (function() {
     function Basket() {
-        this.datamanager = null
+        this.datamanager = null;
     }
-    // 특정 제품을 장바구니에서 삭제하고자 할 때
     Basket.prototype.setManager = function (manager){
         this.datamanager = manager
     }
-    // 데이터를 지워야 할 때 DB매니저의 unregister 함수를 호출
+    // 특정 제품을 장바구니에서 삭제하고자 할 때 basket.deleteItem(iPhone)
     Basket.prototype.deleteItem = function(item) {
         this.datamanager.unregister(item);
     };
-    // 장바구니에 있는 모든 제품을 보고싶을 때
+    // 장바구니에 있는 모든 제품을 보고싶을 때 basket.showList()
     Basket.prototype.showList = function() {
         return this.datamanager.getDataList();
     }

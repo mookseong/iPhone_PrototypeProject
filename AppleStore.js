@@ -1,18 +1,16 @@
 import {DataManager} from "./Data/DataManager.js";
-import {AirPod_Max} from "./data/product/AirPods/AirPods.js";
-import {iPad_Pro_5_SpaceGray} from "./data/product/iPad/iPad.js";
-import {iPhone13, iPhone13_Option} from "./data/product/iPhone/iPhone.js";
-import {Watch7} from "./data/product/Watch/Watch.js";
+import { getProduct } from "./data/ProductManager.js";
 import {Basket} from "./Function/basket/Basket.js";
 import {buyS, Option} from "./function/buy/Buy.js";
 
 // 이것들 한 번에 묶기
 // facade pattern : 로직은 내부에서 작동하고 사용자에게는 간단한 인터페이스만 제공 => 사용자는 번호만 고르고 고른 번호에 따른 출력들을 숨기면 되나??
-const iPhoneMainModel = function () {
-    console.log(`모델명 : ${iPhone13.Name}`);
-    console.log(`세대 : ${iPhone13.Generation}`);
-    console.log(`색상 : ${iPhone13.Color}`);
-    console.log(`성능 = {프로세서 : ${iPhone13.Performance.CPU}칩, 메모리 : ${iPhone13.Performance.RAM}, 저장공간 : ${iPhone13.Performance.Storage}GB, 화면크기 : ${iPhone13.Performance.ScreenSize}인치}`);
+const iPhoneMainModel = function (data){
+    this.data = getProduct.data;
+    console.log(`모델명 : ${data.Name}`);
+    console.log(`세대 : ${data.Generation}`);
+    console.log(`색상 : ${data.Color})}`);
+    console.log(`성능 = {프로세서 : ${getProduct.iPhone13.setPerformance(CPU)}칩, 메모리 : ${getProduct.iPhone13.setPerformance(RAM)}, 저장공간 : ${getProduct.iPhone13.setPerformance(Storage)}GB, 화면크기 : ${getProduct.iPhone13.setPerformance(ScreenSize)}인치}`);
 }
 
 const iPadMainModel = function () {
