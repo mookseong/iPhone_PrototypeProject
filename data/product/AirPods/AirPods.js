@@ -1,4 +1,4 @@
-import {AirPodModel} from "../../model/DataModel.js";
+import {AirPodModel} from "../../../model/DataModel.js";
 
 export const AirPod_Option = {
     carving: function () {

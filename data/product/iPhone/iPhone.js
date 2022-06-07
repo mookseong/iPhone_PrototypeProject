@@ -1,4 +1,4 @@
-import {JsonInfo} from "../../function/json/JsonRead.js";
+import {JsonInfo} from "../../json/JsonRead.js";
 
 
 export const iPhone13_Option = {

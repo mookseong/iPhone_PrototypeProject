@@ -1,8 +1,8 @@
 import {DataManager} from "./Data/DataManager.js";
-import {AirPod_Max} from "./data/product/AirPods.js";
-import {iPad_Pro_5_SpaceGray} from "./data/product/iPad.js";
-import {iPhone13, iPhone13_Option} from "./data/product/iPhone.js";
-import {Watch7} from "./data/product/Watch.js";
+import {AirPod_Max} from "./data/product/AirPods/AirPods.js";
+import {iPad_Pro_5_SpaceGray} from "./data/product/iPad/iPad.js";
+import {iPhone13, iPhone13_Option} from "./data/product/iPhone/iPhone.js";
+import {Watch7} from "./data/product/Watch/Watch.js";
 import {Basket} from "./Function/basket/Basket.js";
 import {buyS, Option} from "./function/buy/Buy.js";
 

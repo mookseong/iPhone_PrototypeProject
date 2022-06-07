@@ -1,4 +1,4 @@
-import {iPhone13_Option} from "../../../data/product/iPhone.js";
+import {iPhone13_Option} from "../../../data/product/iPhone/iPhone.js";
 
 export const iPhone13List= function(commander) {
     commander.option(iPhone13_Option.iPhoneModel);

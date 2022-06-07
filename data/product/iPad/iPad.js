@@ -1,5 +1,5 @@
-import {iModel, ProductPerformanceModel} from "../../model/DataModel.js";
-import {JsonInfo} from "../../function/json/JsonRead.js";
+import {iModel, ProductPerformanceModel} from "../../../model/DataModel.js";
+import {JsonInfo} from "../../json/JsonRead.js";
 
 export const iPad_Pro_Option = {
     iPadModel: function () {

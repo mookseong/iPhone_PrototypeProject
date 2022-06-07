@@ -70,3 +70,5 @@ export const getProduct = {
 export const getProductOption = function () {
 
 }
+
+console.log(getProduct.iPhone13().Performance.CPU)

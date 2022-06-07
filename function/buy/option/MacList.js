@@ -1,4 +1,4 @@
-export const Mac_Option = {
+export const MacList = {
     MacProcess: function (Model) {
         console.log("시스템 온 칩(프로세서)선택하기");
         switch (Model) {
