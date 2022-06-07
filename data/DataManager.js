@@ -17,7 +17,6 @@ export const DataManager = (function () {
         console.log("항목을 삭제했습니다.");
     };
     // 장바구니에서 showList가 실행되면 dataList를 출력해줌
-    // 장바구니에서 deleteItem이 실행되면 dataList에서 item을 찾아 항목을 삭제함
     // basket.deleteItem(item) --> unregister(item)
     DataManager.prototype.getDataList = function () {
         this.dataList.forEach((item) => {
