@@ -1,7 +1,6 @@
 export const Subject = (function () {
     function Observer() {
         this.observers = [];
-        this.state = null;
     }
 
     Observer.prototype.subscribe = function (observer) {
@@ -37,7 +36,7 @@ const BatteryState = (function () {
     return Battery
 })();
 const subject = new Subject();
-const batteryState = new BatteryState(subject)
+const batteryState = new BatteryState(subject);
 
 const observer = {
     notify: (change) => console.log(`배터리상태는 ${change} 입니다.`)
