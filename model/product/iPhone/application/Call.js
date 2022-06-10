@@ -1,24 +1,57 @@
-// const Call = function() {
-//     Call.prototype.makeAPhone = function() {
-//         console.log("전화를 겁니다.");
-//     }
-//     Call.prototype.pickUpPhone = function() {
-//         console.log("전화를 받습니다.")
-//     }
-// }
-
-
+// call - observer
 const Call = (function() {
-    function Call() {}
+    function Call() {
+        this.observers = [];
+    }
+    Call.prototype.register = function(obs) {
+        this.observers.push(obs);
+    }
     Call.prototype.makeAPhone = function() {
-        return `전화를 겁니다.`;
+        return `전화 신호를 보냅니다...`;
     };
     Call.prototype.pickUpPhone = function() {
-        return `전화를 받습니다.`;
-    };
+        console.log("전화 신호를 받았습니다...");
+        this.observers.forEach((obs) => {
+            try {
+                console.log(obs.callUpdate());
+            } catch {
+                return 0;
+            }
+        });
+    }
     return Call;
 })();
 
+const CallObserver = (function() {
+    function CallObserver() {}
+    CallObserver.prototype.callUpdate = function() {};
+    return CallObserver;
+})();
+
+const Screen = (function() {
+    function Screen() {}
+    Screen.prototype.callUpdate = function() {
+        return `[현재 화면을 전화 화면으로 전환합니다.]`;
+    }
+    return Screen;
+})();
+const Sound = (function() {
+    function Sound() {}
+    Sound.prototype.callUpdate = function() {
+        return `[컬러링이 울립니다.]`;
+    }
+    return Sound;
+})();
+
+Screen.__proto__ = new CallObserver();
+Sound.__proto__ = new CallObserver();
+
 // testcode
-var ring1 = new Call();
-console.log(ring1.makeAPhone())
+var call = new Call();
+var screen = new Screen();
+var sound = new Sound();
+
+call.register(screen);
+call.register(sound);
+
+call.pickUpPhone();
