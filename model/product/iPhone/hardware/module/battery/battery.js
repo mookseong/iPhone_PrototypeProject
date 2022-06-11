@@ -35,11 +35,3 @@ export const battery = (function () {
 
     return Battery
 })();
-
-const subject1 = new batterySubject();
-const observer = {
-    notify: (change) => console.log(`배터리상태는 ${change} 입니다.`)
-};
-subject1.subscribe(observer);
-
-

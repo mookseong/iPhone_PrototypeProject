@@ -10,12 +10,15 @@ import {mute} from "./module/sound/mute.js";
 
 export const setting = (function () {
     function Setting() {
-        this.battery = new battery(new batterySubject());
+        this.batteryObserver = new batterySubject()
+        this.battery = new battery(this.batteryObserver);
         this.wifi = new wifi();
         this.bluetooth = new bluetooth();
         this.screen = new screen();
+        this.screenService = false;
         this.sound = new sound_strategy(new volume());
         this.security = null;
+        this.startService();
     }
 
     Setting.prototype.setSecurity = function (security) {
@@ -24,13 +27,11 @@ export const setting = (function () {
     };
     Setting.prototype.startService = function () {
         this.bluetooth.startBluetooth();
-        this.screen.startScreen();
         this.wifi.startWifi();
         this.sound.play()
     };
     Setting.prototype.stopServiceAll = function () {
         this.bluetooth.stopBluetooth();
-        this.screen.stopScreen();
         this.wifi.stopWifi();
     };
     Setting.prototype.stateWifi = function (state) {
@@ -63,8 +64,20 @@ export const setting = (function () {
     Setting.prototype.setSecurity = function () {
         this.security.register();
     };
+    Setting.prototype.Screen = function (){
+        if (!this.screenService) {
+            this.screen.startScreen();
+            this.screenService = true;
+        }else {
+            this.screen.stopScreen();
+            this.screenService = false;
+        }
+    };
     Setting.prototype.getBattery = function () {
         console.log(`배터리상태는 ${this.battery.getState()}% 입니다.`)
+    };
+    Setting.prototype.getBatteryObserver = function () {
+        return this.batteryObserver;
     };
 
     return Setting
