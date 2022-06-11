@@ -1,3 +1,6 @@
+import { callScreen } from "./callScreen.js";
+import { callSound } from "./callSound.js";
+
 // call - observer
 export const call = (function () {
     function Call() {
@@ -22,7 +25,7 @@ export const call = (function () {
         });
     };
     Call.prototype.startApp = function () {
-        return `[전화]를 실행합니다.`;
+        console.log("[전화]를 실행합니다.");
     };
     Call.prototype.infoApp = function () {
         return this.info;
@@ -30,7 +33,7 @@ export const call = (function () {
     return Call;
 })();
 
-export const CallObserver = (function () {
+export const callObserver = (function () {
     function CallObserver() {
     }
 
@@ -39,36 +42,16 @@ export const CallObserver = (function () {
     return CallObserver;
 })();
 
-// Screen, Sound 부분에 추가
-const Screen = (function () {
-    function Screen() {
-    }
-
-    Screen.prototype.callUpdate = function () {
-        return `[현재 화면을 전화 화면으로 전환합니다.]`;
-    }
-    return Screen;
-})();
-Screen.__proto__ = new CallObserver();
-
-const Sound = (function () {
-    function Sound() {
-    }
-
-    Sound.prototype.callUpdate = function () {
-        return `[컬러링이 울립니다.]`;
-    }
-    return Sound;
-})();
-Sound.__proto__ = new CallObserver();
+callSound.__proto__ = new callObserver();
+callScreen.__proto__ = new callObserver();
 
 /* testcode
-var call = new call();
-var screen = new Screen();
-var sound = new Sound();
+var myCall = new call();
+var screen = new callScreen();
+var sound = new callSound();
 
-call.register(screen);
-call.register(sound);
+myCall.register(screen);
+myCall.register(sound);
 
-call.pickUpPhone();
+myCall.pickUpPhone();
 */

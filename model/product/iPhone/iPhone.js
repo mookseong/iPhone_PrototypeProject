@@ -109,13 +109,13 @@ const iPhone = (function () {
 })();
 
 const iPhone13 = new iPhone();
-iPhone13.wifi(false);
-iPhone13.wifi(false);
-iPhone13.bluetooth(true);
-iPhone13.getBattery();
-iPhone13.getInfo();
-iPhone13.playSound();
-iPhone13.AirplaneMode();
+// iPhone13.wifi(false);
+// iPhone13.wifi(false);
+// iPhone13.bluetooth(true);
+// iPhone13.getBattery();
+// iPhone13.getInfo();
+// iPhone13.playSound();
+// iPhone13.AirplaneMode();
 
 
 iPhone13.executeAlarm();

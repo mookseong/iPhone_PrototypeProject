@@ -1,11 +1,13 @@
 import {browser} from "./Strategy/browser.js";
 import {calender} from "./Strategy/calender.js";
-import {call} from "./Strategy/call.js";
-import {alarm, stopwatch, timer} from "./Strategy/clock.js";
+import {call} from "./Strategy/call/call.js";
 import {gallery} from "./Strategy/gallery.js";
 import {memo} from "./Strategy/memo.js";
 import {normalStrategy} from "./Strategy/camera/normalStrategy.js";
 import {cameraStrategy} from "./Strategy/camera/camera.js";
+import { alarm } from "./Strategy/clock/alarm.js";
+import { stopwatch } from "./Strategy/clock/stopwatch.js";
+import { timer } from "./Strategy/clock/timer.js";
 
 const commander = (function () {     // appSwitcher
     function Commander() {
