@@ -1,25 +1,25 @@
-import {AirPodModel, iModel, ProductPerformanceModel, WatchModel} from "../../model/DataModel.js";
+import {AirPodModel, iModel, PerformanceModel, WatchModel} from "../../model/DataModel.js";
 
-const iPhone_Performance = new ProductPerformanceModel()
+const iPhone_Performance = new PerformanceModel()
     .setCPU('A15')
     .setRAM('6G')
     .setScreenSize(6.1)
     .setStorage(128).build();
 
-const iPad_Performance = new ProductPerformanceModel()
+const iPad_Performance = new PerformanceModel()
     .setCPU('M1')
     .setRAM('8G')
     .setScreenSize(12.9)
     .setStorage(128)
     .build();
 
-const iMac_Performance = new ProductPerformanceModel()
+const iMac_Performance = new PerformanceModel()
     .setCPU('M1 8CPU_8GPU')
     .setRAM('8G')
     .setScreenSize(24)
     .setStorage(256).build()
 
-const MacBookAir_Performance = new ProductPerformanceModel()
+const MacBookAir_Performance = new PerformanceModel()
     .setCPU('M1 8GPU')
     .setRAM('8G')
     .setScreenSize(13)

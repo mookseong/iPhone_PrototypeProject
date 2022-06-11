@@ -1,25 +1,25 @@
-export const Subject = (function () {
-    function Observer() {
+export const batterySubject = (function () {
+    function BatteryObserver() {
         this.observers = [];
     }
 
-    Observer.prototype.subscribe = function (observer) {
+    BatteryObserver.prototype.subscribe = function (observer) {
         this.observers.push(observer);
     };
-    Observer.prototype.unsubscribe = function (observer) {
+    BatteryObserver.prototype.unsubscribe = function (observer) {
         this.observers.splice(this.observers.indexOf(observer), 1);
     };
-    Observer.prototype.notifyAll = function (changeOfState) {
+    BatteryObserver.prototype.notifyAll = function (changeOfState) {
         this.observers.forEach((observer) => observer.notify(changeOfState));
     };
 
-    return Observer
+    return BatteryObserver
 })();
 
-const BatteryState = (function () {
+export const battery = (function () {
     function Battery(Subject) {
         this.subject = Subject
-        this.state = 0
+        this.state = 100
     }
 
     Battery.prototype.setState = function (state) {
@@ -35,14 +35,3 @@ const BatteryState = (function () {
 
     return Battery
 })();
-const subject = new Subject();
-const batteryState = new BatteryState(subject);
-
-const observer = {
-    notify: (change) => console.log(`배터리상태는 ${change} 입니다.`)
-};
-subject.subscribe(observer);
-
-batteryState.setState(50);
-batteryState.setState(10);
-

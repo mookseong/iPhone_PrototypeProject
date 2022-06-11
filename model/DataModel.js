@@ -26,7 +26,7 @@ export const iModel = function (Name) {
     }
 }
 // 제품 스팩 관한 Builder
-export const ProductPerformanceModel = function () {
+export const PerformanceModel = function () {
     let CPU;
     let RAM;
     let Storage;

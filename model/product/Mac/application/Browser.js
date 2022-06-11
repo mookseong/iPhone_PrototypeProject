@@ -1,3 +1,0 @@
-const browser = function (){
-
-}

@@ -1,7 +1,7 @@
 import {notification} from "../iPhone/hardware/module/notification/notification.js";
 
-const iPad = (function () {
-    function Pad() {
+const mac = (function () {
+    function MacBook() {
         this.notificationObserver = new notification();
         const macbook = {
             notify: (title, change) => {
@@ -12,13 +12,13 @@ const iPad = (function () {
         this.notificationObserver.subscribe(macbook);
     }
 
-    Pad.prototype.start = function () {
+    MacBook.prototype.start = function () {
 
     };
-    Pad.prototype.component = function () {
+    MacBook.prototype.component = function () {
 
     };
-    return Pad;
+    return MacBook;
 })();
 
-const iPad1 = new iPad();
+const mac1 = new mac();
