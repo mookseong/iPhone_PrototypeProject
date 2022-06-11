@@ -1,6 +1,6 @@
 import {bluetoothOn} from "./bluetoothOn.js";
 
-export const bluetoothOff= (function () {
+export const bluetoothOff = (function () {
     function Bluetooth() {
     }
 

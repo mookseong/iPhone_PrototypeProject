@@ -8,7 +8,7 @@ export const touchId = (function () {
     TouchId.prototype.certify = function () {
         console.log("TouchId로 인증합니다.")
     };
-    TouchId.prototype.securityInfo = function (){
+    TouchId.prototype.securityInfo = function () {
         console.log("TouchId를 사용합니다.")
     }
 

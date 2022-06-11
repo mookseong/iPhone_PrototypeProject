@@ -10,7 +10,7 @@ export const security = (function () {
     Strategy.prototype.certify = function () {
         this.strategy.certify();
     };
-    Strategy.prototype.securityInfo = function (){
+    Strategy.prototype.securityInfo = function () {
         this.strategy.securityInfo()
     }
 

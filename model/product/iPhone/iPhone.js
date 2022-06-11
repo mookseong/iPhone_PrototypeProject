@@ -37,6 +37,7 @@ const iPhone = (function () {
     }
     Phone.prototype.getInfo = function () {
         console.log("모델명 : " + this.info.Name + ",\n" + "색상 : " + this.info.Color + ",\n" + "세대 : " + this.info.Generation);
+        this.setting.getBattery();
     };
     Phone.prototype.wifi = function (set) {
         this.setting.stateWifi(set);

@@ -8,7 +8,7 @@ export const faceId = (function () {
     FaceId.prototype.certify = function () {
         console.log("FaceId로 인증합니다.")
     };
-    FaceId.prototype.securityInfo = function (){
+    FaceId.prototype.securityInfo = function () {
         console.log("FaceId를 사용합니다.")
     }
 

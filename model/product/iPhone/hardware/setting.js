@@ -3,10 +3,6 @@ import {wifi} from "./module/wifi/wifi.js";
 import {bluetooth} from "./module/bluetooth/bluetooth.js";
 import {screen} from "./module/srcreen/screen.js";
 import {sound_strategy} from "./module/sound/sound_strategy.js";
-import {volume} from "./module/sound/volume.js";
-import {vibration} from "./module/sound/vibration.js";
-import {mute} from "./module/sound/mute.js";
-
 
 export const setting = (function () {
     function Setting() {
@@ -16,7 +12,7 @@ export const setting = (function () {
         this.bluetooth = new bluetooth();
         this.screen = new screen();
         this.screenService = false;
-        this.sound = new sound_strategy(new volume());
+        this.sound = new sound_strategy();
         this.security = null;
         this.startService();
     }
@@ -28,11 +24,12 @@ export const setting = (function () {
     Setting.prototype.startService = function () {
         this.bluetooth.startBluetooth();
         this.wifi.startWifi();
-        this.sound.play()
+        this.sound.setStrategy("소리")
     };
     Setting.prototype.stopServiceAll = function () {
         this.bluetooth.stopBluetooth();
         this.wifi.stopWifi();
+        this.sound.setStrategy("무음")
     };
     Setting.prototype.stateWifi = function (state) {
         if (state) this.wifi.startWifi(); else this.wifi.stopWifi();
@@ -47,28 +44,16 @@ export const setting = (function () {
         this.sound.play();
     };
     Setting.prototype.setSound = function (state) {
-        switch (state) {
-            case "무음":
-                this.sound.setStrategy(new mute());
-                break;
-            case "소리":
-                this.sound.setStrategy(new volume());
-                break;
-            case "진동":
-                this.sound.setStrategy(new vibration());
-                break;
-            default:
-                console.log("잘못된 값이 들어왔습니다.")
-        }
+        this.sound.setStrategy(state);
     };
     Setting.prototype.setSecurity = function () {
         this.security.register();
     };
-    Setting.prototype.Screen = function (){
+    Setting.prototype.Screen = function () {
         if (!this.screenService) {
             this.screen.startScreen();
             this.screenService = true;
-        }else {
+        } else {
             this.screen.stopScreen();
             this.screenService = false;
         }

@@ -1,6 +1,6 @@
 import {wifiOn} from "./wifiOn.js";
 
-export const wifiOff= (function () {
+export const wifiOff = (function () {
     function Wifi() {
     }
 
