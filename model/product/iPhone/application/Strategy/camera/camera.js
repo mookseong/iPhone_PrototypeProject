@@ -1,26 +1,22 @@
-import {closeupStrategy} from "./closeupStrategy.js";
-import {panoramaStrategy} from "./panoramaStrategy.js";
-import {videoStrategy} from "./videoStrategy.js";
-import {normalStrategy} from "./normalStrategy.js";
-
 export const cameraStrategy = (function () {
-    function CameraStrategy(strategy) {
-        this._strategy = strategy;
+    function CameraStrategy() {
         this._info = "[카메라]";
     }
-
-    CameraStrategy.prototype.setCloseUp = function () {
-        this._strategy = new closeupStrategy();
-    };
-    CameraStrategy.prototype.setPanorama = function () {
-        this._strategy = new panoramaStrategy();
-    };
-    CameraStrategy.prototype.setVideo = function () {
-        this._strategy = new videoStrategy();
-    };
-    CameraStrategy.prototype.setNormal = function () {
-        this._strategy = new normalStrategy();
-    };
+    CameraStrategy.prototype.setStrategy = function(strategy) {
+        this._strategy = strategy;
+    }
+    // CameraStrategy.prototype.setCloseUp = function () {
+    //     this._strategy = new closeupStrategy();
+    // };
+    // CameraStrategy.prototype.setPanorama = function () {
+    //     this._strategy = new panoramaStrategy();
+    // };
+    // CameraStrategy.prototype.setVideo = function () {
+    //     this._strategy = new videoStrategy();
+    // };
+    // CameraStrategy.prototype.setNormal = function () {
+    //     this._strategy = new normalStrategy();
+    // };
     CameraStrategy.prototype.execute = function () {
         this._strategy.execute();
     };
@@ -35,5 +31,12 @@ export const cameraStrategy = (function () {
     return CameraStrategy;
 })();
 
+/* testcode
+const shot = new cameraStrategy();
+const closeup = new closeupStrategy();
+const panorama = new panoramaStrategy()
+shot.setStrategy(closeup)
+shot.setStrategy(panorama)
 
-
+shot.execute()
+*/

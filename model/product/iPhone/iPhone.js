@@ -70,7 +70,7 @@ const iPhone = (function () {
     Phone.prototype.executeMemo = function () {
         this.home.openMemo();
     };
-    //setting
+    // setting
     Phone.prototype.AirplaneMode = function () {
         console.log("비행기모드를 킵니다.")
         this.setting.stopServiceAll();
