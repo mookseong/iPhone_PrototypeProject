@@ -6,77 +6,42 @@ import { Alarm, StopWatch, Timer } from "./Strategy/Clock.js";
 import { Gallery } from "./Strategy/Gallery.js";
 import { Note } from "./Strategy/Notes.js";
 
-// const Strategy = (function() {
-//     function Strategy() {
-//         this.strategy = null;
-//     }
-//     Strategy.prototype.setStrategy = function(strategy) {
-//         this.strategy = strategy;
-//     }
-//     Strategy.prototype.execute = function() {
-//         this.strategy.execute();
-//     };
-//     return Strategy;
-// })();
-
-const IPhoneUser = (function() {
-    function IPhoneUser() {}
-    IPhoneUser.prototype.operate = function(commander) {
-      commander.execute();
-    };
-    return IPhoneUser;
-})();
-
-var Commander = (function() {     // appSwitcher
+export const home = (function () {     // appSwitcher
     function Commander() {
-      this.runApp = [];
-      this.stayApp = [];
+        this.runApp = null;
+        this.stayApp = [];
     }
-    Commander.prototype.execute = function() {
-      this.runApp.forEach(function(command) {
-        command();
-      });
+    Commander.prototype.setApp = function (strategy) {
+        if (this.runApp != null)
+            this.stayApp.push(this.runApp);
+        this.runApp = strategy;
     };
-    Commander.prototype.openApp = function(command) {
-      if (this.runApp == null) {
-        this.runApp.push(function() {
-          command.call(null);
-        });
-      }
-      else if (this.runApp != null) {
-        this.stayApp.push(function() {
-          command.call(null);
-        });
-      }
+    Commander.prototype.startApp = function () {
+        this.runApp.startApp();
     };
-    Commander.prototype.closeApp = function() {
-      if (this.runApp == null) {
-        return `실행시킨 App이 없습니다.`;
-      }
-      else if (this.runApp != null) {
-        this.runApp.pop();
-        this.runApp.push(this.stayApp[0]);
+    Commander.prototype.infoMultitask = function () {
+        console.log("현재 실행중인 프로그램 : " + this.runApp.infoApp());
+        this.stayApp.forEach( function (commander) {
+            console.log("대기중인 프로그램 : " + commander.infoApp());
+        })
+    };
+    Commander.prototype.closeStayApp = function () {
         this.stayApp.pop();
-      }
     };
+    Commander.prototype.closeRunApp = function () {
+        this.runApp = null;
+    };
+
     return Commander;
 })();
 
+const appSwitcher = new home();
 
-const iPhoneUser = new IPhoneUser();
-const appSwitcher = new Commander();
-const browser = new Browser();
-const calender = new Calender();
-const call = new Call();
-const camera = new CameraStrategy();
-const alarm = new Alarm();
-const stopwatch = new StopWatch();
-const timer = new Timer();
-const gallery = new Gallery();
-const note = new Note();
 
-appSwitcher.openApp(browser.execute())
-appSwitcher.openApp(calender.execute())
-appSwitcher.closeApp()
+appSwitcher.setApp(new Browser())
+appSwitcher.startApp();
 
-iPhoneUser.operate()
+appSwitcher.setApp(new Calender())
+appSwitcher.startApp();
+
+appSwitcher.infoMultitask()
