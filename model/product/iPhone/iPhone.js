@@ -1,6 +1,5 @@
 import {setting} from "./hardware/setting.js";
 import {iModel, PerformanceModel} from "../../DataModel.js";
-import {faceId} from "./hardware/module/security/faceId.js";
 
 const iPhone = (function () {
     function Phone() {
@@ -59,7 +58,7 @@ const iPhone = (function () {
         this.setting.stateSound();
     };
     Phone.prototype.setSecurity = function () {
-        this.setting.setSecurity(new faceId());
+        this.setting.setSecurity();
     };
 
     return Phone;
@@ -72,5 +71,4 @@ const iPhone13 = new iPhone();
 // iPhone13.getBattery();
 // iPhone13.getInfo();
 iPhone13.playSound();
-iPhone13.setSound("무음");
 // iPhone13.AirplaneMode();

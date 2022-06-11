@@ -3,6 +3,8 @@ import {wifi} from "./module/wifi/wifi.js";
 import {bluetooth} from "./module/bluetooth/bluetooth.js";
 import {screen} from "./module/srcreen/screen.js";
 import {sound_strategy} from "./module/sound/sound_strategy.js";
+import {faceId} from "./module/security/faceId.js";
+import {security} from "./module/security/security.js";
 
 export const setting = (function () {
     function Setting() {
@@ -13,14 +15,9 @@ export const setting = (function () {
         this.screen = new screen();
         this.screenService = false;
         this.sound = new sound_strategy();
-        this.security = null;
+        this.security = new security(new faceId());
         this.startService();
     }
-
-    Setting.prototype.setSecurity = function (security) {
-        this.security = security;
-        this.startService();
-    };
     Setting.prototype.startService = function () {
         this.bluetooth.startBluetooth();
         this.wifi.startWifi();
