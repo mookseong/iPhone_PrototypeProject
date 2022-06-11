@@ -1,5 +1,5 @@
 //strategy
-var Strategy = (function() {
+const Strategy = (function() {
     function Strategy() {
         this.strategy = null;
     }
@@ -12,7 +12,7 @@ var Strategy = (function() {
     return Strategy;
 })();
 
-var CameraStrategy = (function() {
+const CameraStrategy = (function() {
     function CameraStrategy() {}
     CameraStrategy.prototype.execute = function() {
         console.log("기본 모드로 촬영합니다.");
@@ -20,7 +20,7 @@ var CameraStrategy = (function() {
     return CameraStrategy;
 })();
 
-var CameraCloseUpStrategy = (function() {
+const CameraCloseUpStrategy = (function() {
     function CameraCloseUpStrategy() {}
     CameraCloseUpStrategy.prototype.execute = function() {
         console.log("클로즈업 모드로 촬영합니다.");
@@ -28,7 +28,7 @@ var CameraCloseUpStrategy = (function() {
     return CameraCloseUpStrategy;
 })();
 
-var CameraPanoramaStrategy = (function() {
+const CameraPanoramaStrategy = (function() {
     function CameraPanoramaStrategy() {}
     CameraPanoramaStrategy.prototype.execute = function() {
         console.log("파노라마 모드로 촬영합니다.");
@@ -36,7 +36,7 @@ var CameraPanoramaStrategy = (function() {
     return CameraPanoramaStrategy;
 })();
 
-var CameraVideoStrategy = (function() {
+const CameraVideoStrategy = (function() {
     function CameraVideoStrategy() {}
     CameraVideoStrategy.prototype.execute = function() {
         console.log("비디오 모드로 촬영합니다.");
@@ -45,10 +45,10 @@ var CameraVideoStrategy = (function() {
 })();
 
 // testcode
-var shot = new Strategy();
-var closeUp = new CameraCloseUpStrategy();
-var panorama = new CameraPanoramaStrategy();
-var video = new CameraVideoStrategy();
+const shot = new Strategy();
+const closeUp = new CameraCloseUpStrategy();
+const panorama = new CameraPanoramaStrategy();
+const video = new CameraVideoStrategy();
 
 shot.setStrategy(closeUp);
 shot.setStrategy(panorama);
