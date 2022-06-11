@@ -1,7 +1,8 @@
 // call - observer
-export const Call = (function() {
+export const call = (function() {
     function Call() {
         this.observers = [];
+        this.info = "[전화]";
     }
     Call.prototype.register = function(obs) {
         this.observers.push(obs);
@@ -19,8 +20,11 @@ export const Call = (function() {
             }
         });
     };
-    Call.prototype.execute = function() {
+    Call.prototype.startApp = function() {
         return `[전화]를 실행합니다.`;
+    };
+    Call.prototype.infoApp = function() {
+        return this.info;
     };
     return Call;
 })();
@@ -51,7 +55,7 @@ const Sound = (function() {
 Sound.__proto__ = new CallObserver();
 
 /* testcode
-var call = new Call();
+var call = new call();
 var screen = new Screen();
 var sound = new Sound();
 
