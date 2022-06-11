@@ -10,7 +10,7 @@
 //     }
 // }
 
-const Note = (function() {
+export const Note = (function() {
     function Note() {}
     Note.prototype.addNote = function() {
         return `메모를 추가한다.`;
@@ -21,9 +21,13 @@ const Note = (function() {
     Note.prototype.pinNote = function() {
         return `메모를 고정한다.`;
     };
+    Note.prototype.execute = function() {
+        console.log("[메모]를 실행합니다.");
+    };
     return Note;
 })();
 
-// testcode
+/* testcode
 var myNote = new Note();
 console.log(myNote.addNote());
+*/

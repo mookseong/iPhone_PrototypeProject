@@ -1,5 +1,5 @@
 // call - observer
-const Call = (function() {
+export const Call = (function() {
     function Call() {
         this.observers = [];
     }
@@ -18,16 +18,20 @@ const Call = (function() {
                 return 0;
             }
         });
-    }
+    };
+    Call.prototype.execute = function() {
+        return `[전화]를 실행합니다.`;
+    };
     return Call;
 })();
 
-const CallObserver = (function() {
+export const CallObserver = (function() {
     function CallObserver() {}
     CallObserver.prototype.callUpdate = function() {};
     return CallObserver;
 })();
 
+// Screen, Sound 부분에 추가
 const Screen = (function() {
     function Screen() {}
     Screen.prototype.callUpdate = function() {
@@ -35,6 +39,8 @@ const Screen = (function() {
     }
     return Screen;
 })();
+Screen.__proto__ = new CallObserver();
+
 const Sound = (function() {
     function Sound() {}
     Sound.prototype.callUpdate = function() {
@@ -42,11 +48,9 @@ const Sound = (function() {
     }
     return Sound;
 })();
-
-Screen.__proto__ = new CallObserver();
 Sound.__proto__ = new CallObserver();
 
-// testcode
+/* testcode
 var call = new Call();
 var screen = new Screen();
 var sound = new Sound();
@@ -55,3 +59,4 @@ call.register(screen);
 call.register(sound);
 
 call.pickUpPhone();
+*/

@@ -10,7 +10,7 @@
 //     }
 // }
 
-const Gallery = (function() {
+export const Gallery = (function() {
     function Gallery() {}
     Gallery.prototype.showPicture = function() {
         return `사진들을 보여준다.`;
@@ -21,9 +21,13 @@ const Gallery = (function() {
     Gallery.prototype.editGallery = function() {
         return `갤러리를 편집한다.`;
     };
+    Gallery.prototype.execute = function() {
+        return `[갤러리]를 실행합니다.`;
+    };
     return Gallery;
 })();
 
-// testcode
+/* testcode
 var myGallery = new Gallery();
-console.log(myGallery.editGallery())
+console.log(myGallery.editGallery());
+*/

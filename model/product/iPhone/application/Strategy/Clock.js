@@ -42,7 +42,7 @@
 // }
 
 
-const Alarm = (function() {
+export const Alarm = (function() {
     function Alarm() {}
     Alarm.prototype.setAlarm = function() {
         return `알람을 설정합니다.`;
@@ -56,11 +56,14 @@ const Alarm = (function() {
     Alarm.prototype.offAlarm = function() {
         return `알람을 끕니다.`;
     };
+    Alarm.prototype.execute = function() {
+        return `[알람]을 실행합니다.`;
+    };
     return Alarm;
 })();
 
 
-const StopWatch = (function() {
+export const StopWatch = (function() {
     function StopWatch() {}
     StopWatch.prototype.watchStart = function() {
         return `스탑워치를 시작합니다.`;
@@ -74,11 +77,14 @@ const StopWatch = (function() {
     StopWatch.prototype.watchLabTime = function() {
         return `구간타임을 기록합니다.`;
     };
+    StopWatch.prototype.execute = function() {
+        return `[스톱워치]를 실행합니다.`;
+    };
     return StopWatch;
 })();
 
 
-const Timer = (function() {
+export const Timer = (function() {
     function Timer(hour, minute, second) {
         this.hour = hour;
         this.minute = minute;
@@ -93,10 +99,14 @@ const Timer = (function() {
     Timer.prototype.TimerCancel = function() {
         return `타이머를 종료합니다.`;
     };
+    Timer.prototype.execute = function() {
+        return `[타이머]를 실행합니다.`;
+    };
     return Timer;
 })();
 
 
-// testcode
+/* testcode
 var user = new Timer(1, 10, 30);
 console.log(user.TimerStart());
+*/

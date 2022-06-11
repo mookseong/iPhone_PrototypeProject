@@ -13,7 +13,7 @@
 //     }
 // }
 
-const Browser = (function() {
+export const Browser = (function() {
     function Browser() {}
     Browser.prototype.search = function() {
         return `인터넷 검색을 수행합니다.`;
@@ -27,10 +27,14 @@ const Browser = (function() {
     Browser.prototype.deleteHistory = function() {
         return `인터넷 검색기록을 삭제합니다.`;
     };
+    Browser.prototype.execute = function() {
+        console.log("[Safari]를 실행합니다.");
+    };
     return Browser;
 })();
 
-// testcode
+/* testcode
 var myBrowser = new Browser();
 console.log(myBrowser.search())
 console.log(myBrowser.addTab())
+*/
