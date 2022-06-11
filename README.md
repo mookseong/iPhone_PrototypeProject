@@ -6,3 +6,4 @@ Apple의 iPhone의 주로를 프로토타입으로 설계했습니다.
   + State Pattern
   + Builder Pattern
   + Facade Pattern
+  + Observer Pattern

@@ -8,58 +8,59 @@ import {security} from "./module/security/security.js";
 
 export const setting = (function () {
     function Setting() {
-        this.batteryObserver = new batterySubject()
-        this.battery = new battery(this.batteryObserver);
-        this.wifi = new wifi();
-        this.bluetooth = new bluetooth();
-        this.screen = new screen();
-        this.screenService = false;
-        this.sound = new sound_strategy();
-        this.security = new security(new faceId());
+        this._batteryObserver = new batterySubject()
+        this._battery = new battery(this._batteryObserver);
+        this._wifi = new wifi();
+        this._bluetooth = new bluetooth();
+        this._screen = new screen();
+        this._screenService = false;
+        this._sound = new sound_strategy();
+        this._security = new security(new faceId());
         this.startService();
     }
+
     Setting.prototype.startService = function () {
-        this.bluetooth.startBluetooth();
-        this.wifi.startWifi();
-        this.sound.setStrategy("소리")
+        this._bluetooth.startBluetooth();
+        this._wifi.startWifi();
+        this._sound.setStrategy("소리")
     };
     Setting.prototype.stopServiceAll = function () {
-        this.bluetooth.stopBluetooth();
-        this.wifi.stopWifi();
-        this.sound.setStrategy("무음")
+        this._bluetooth.stopBluetooth();
+        this._wifi.stopWifi();
+        this._sound.setStrategy("무음")
     };
     Setting.prototype.stateWifi = function (state) {
-        if (state) this.wifi.startWifi(); else this.wifi.stopWifi();
+        if (state) this._wifi.startWifi(); else this._wifi.stopWifi();
     };
     Setting.prototype.stateScreen = function (state) {
-        if (state) this.screen.startScreen(); else this.screen.stopScreen();
+        if (state) this._screen.startScreen(); else this._screen.stopScreen();
     };
     Setting.prototype.stateBluetooth = function (state) {
-        if (state) this.bluetooth.startBluetooth(); else this.bluetooth.stopBluetooth();
+        if (state) this._bluetooth.startBluetooth(); else this._bluetooth.stopBluetooth();
     };
     Setting.prototype.stateSound = function () {
-        this.sound.play();
+        this._sound.play();
     };
     Setting.prototype.setSound = function (state) {
-        this.sound.setStrategy(state);
+        this._sound.setStrategy(state);
     };
     Setting.prototype.setSecurity = function () {
-        this.security.register();
+        this._security.register();
     };
     Setting.prototype.Screen = function () {
-        if (!this.screenService) {
-            this.screen.startScreen();
-            this.screenService = true;
+        if (!this._screenService) {
+            this._screen.startScreen();
+            this._screenService = true;
         } else {
-            this.screen.stopScreen();
-            this.screenService = false;
+            this._screen.stopScreen();
+            this._screenService = false;
         }
     };
     Setting.prototype.getBattery = function () {
-        console.log(`배터리상태는 ${this.battery.getState()}% 입니다.`)
+        console.log(`배터리상태는 ${this._battery.getState()}% 입니다.`)
     };
     Setting.prototype.getBatteryObserver = function () {
-        return this.batteryObserver;
+        return this._batteryObserver;
     };
 
     return Setting

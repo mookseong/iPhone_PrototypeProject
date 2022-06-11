@@ -4,19 +4,19 @@ import {vibration} from "./vibration.js";
 
 export const sound_strategy = (function () {
     function Strategy() {
-        this.strategy = null;
+        this._strategy = null;
     }
 
     Strategy.prototype.setStrategy = function (state) {
         switch (state) {
             case "무음":
-                this.strategy = new mute();
+                this._strategy = new mute();
                 break;
             case "소리":
-                this.strategy = new volume();
+                this._strategy = new volume();
                 break;
             case "진동":
-                this.strategy = new vibration();
+                this._strategy = new vibration();
                 break;
             default:
                 console.log("잘못된 값이 들어왔습니다.")
@@ -24,7 +24,7 @@ export const sound_strategy = (function () {
         this.play();
     };
     Strategy.prototype.play = function () {
-        this.strategy.play();
+        this._strategy.play();
     };
 
     return Strategy;

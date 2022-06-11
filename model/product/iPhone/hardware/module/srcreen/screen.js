@@ -2,17 +2,17 @@ import {screenOff} from "./screenOff.js";
 
 export const screen = (function () {
     function Screen() {
-        this.screen = new screenOff();
+        this._screen = new screenOff();
     }
 
     Screen.prototype.setState = function (state) {
-        this.screen = state;
+        this._screen = state;
     };
     Screen.prototype.startScreen = function () {
-        this.screen.startScreen(this);
+        this._screen.startScreen(this);
     };
     Screen.prototype.stopScreen = function () {
-        this.screen.stopScreen(this);
+        this._screen.stopScreen(this);
     };
 
     return Screen;

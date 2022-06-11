@@ -1,16 +1,17 @@
 // call - observer
-export const call = (function() {
+export const call = (function () {
     function Call() {
         this.observers = [];
         this.info = "[전화]";
     }
-    Call.prototype.register = function(obs) {
+
+    Call.prototype.register = function (obs) {
         this.observers.push(obs);
     }
-    Call.prototype.makeAPhone = function() {
+    Call.prototype.makeAPhone = function () {
         return `전화 신호를 보냅니다...`;
     };
-    Call.prototype.pickUpPhone = function() {
+    Call.prototype.pickUpPhone = function () {
         console.log("전화 신호를 받았습니다...");
         this.observers.forEach((obs) => {
             try {
@@ -20,34 +21,41 @@ export const call = (function() {
             }
         });
     };
-    Call.prototype.startApp = function() {
+    Call.prototype.startApp = function () {
         return `[전화]를 실행합니다.`;
     };
-    Call.prototype.infoApp = function() {
+    Call.prototype.infoApp = function () {
         return this.info;
     };
     return Call;
 })();
 
-export const CallObserver = (function() {
-    function CallObserver() {}
-    CallObserver.prototype.callUpdate = function() {};
+export const CallObserver = (function () {
+    function CallObserver() {
+    }
+
+    CallObserver.prototype.callUpdate = function () {
+    };
     return CallObserver;
 })();
 
 // Screen, Sound 부분에 추가
-const Screen = (function() {
-    function Screen() {}
-    Screen.prototype.callUpdate = function() {
+const Screen = (function () {
+    function Screen() {
+    }
+
+    Screen.prototype.callUpdate = function () {
         return `[현재 화면을 전화 화면으로 전환합니다.]`;
     }
     return Screen;
 })();
 Screen.__proto__ = new CallObserver();
 
-const Sound = (function() {
-    function Sound() {}
-    Sound.prototype.callUpdate = function() {
+const Sound = (function () {
+    function Sound() {
+    }
+
+    Sound.prototype.callUpdate = function () {
         return `[컬러링이 울립니다.]`;
     }
     return Sound;
