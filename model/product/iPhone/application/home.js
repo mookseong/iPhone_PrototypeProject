@@ -5,9 +5,9 @@ import {gallery} from "./Strategy/gallery.js";
 import {memo} from "./Strategy/memo.js";
 import {normalStrategy} from "./Strategy/camera/normalStrategy.js";
 import {cameraStrategy} from "./Strategy/camera/camera.js";
-import { alarm } from "./Strategy/clock/alarm.js";
-import { stopwatch } from "./Strategy/clock/stopwatch.js";
-import { timer } from "./Strategy/clock/timer.js";
+import {alarm} from "./Strategy/clock/alarm.js";
+import {stopwatch} from "./Strategy/clock/stopwatch.js";
+import {timer} from "./Strategy/clock/timer.js";
 
 const commander = (function () {     // appSwitcher
     function Commander() {
@@ -45,44 +45,44 @@ const commander = (function () {     // appSwitcher
 
 export const home = (function () {
     function Home() {
-        this.commander = new commander();
+        this._commander = new commander();
     }
 
     Home.prototype.startMultiTask = function () {
-        this.commander.infoMultiTask();
+        this._commander.infoMultiTask();
     };
     Home.prototype.stopRunApp = function () {
-        this.commander.closeRunApp();
+        this._commander.closeRunApp();
     };
     Home.prototype.stopStayApp = function () {
-        this.commander.closeStayApp();
+        this._commander.closeStayApp();
     };
     Home.prototype.openCamera = function () {
-        this.commander.setApp(new cameraStrategy(new normalStrategy()))
-    }
+        this._commander.setApp(new cameraStrategy(new normalStrategy()))
+    };
     Home.prototype.openBrowser = function () {
-        this.commander.setApp(new browser());
+        this._commander.setApp(new browser());
     };
     Home.prototype.openCalender = function () {
-        this.commander.setApp(new calender());
+        this._commander.setApp(new calender());
     };
     Home.prototype.openCall = function () {
-        this.commander.setApp(new call());
+        this._commander.setApp(new call());
     };
     Home.prototype.openAlarm = function () {
-        this.commander.setApp(new alarm());
+        this._commander.setApp(new alarm());
     };
     Home.prototype.openStopwatch = function () {
-        this.commander.setApp(new stopwatch());
+        this._commander.setApp(new stopwatch());
     };
     Home.prototype.openTimer = function () {
-        this.commander.setApp(new timer());
+        this._commander.setApp(new timer());
     };
     Home.prototype.openGallery = function () {
-        this.commander.setApp(new gallery());
+        this._commander.setApp(new gallery());
     };
     Home.prototype.openMemo = function () {
-        this.commander.setApp(new memo());
+        this._commander.setApp(new memo());
     };
 
     return Home;

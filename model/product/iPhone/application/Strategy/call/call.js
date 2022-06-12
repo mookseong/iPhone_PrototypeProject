@@ -4,19 +4,19 @@ import { callSound } from "./callSound.js";
 // call - observer
 export const call = (function () {
     function Call() {
-        this.observers = [];
-        this.info = "[전화]";
+        this._observers = [];
+        this._info = "[전화]";
     }
 
     Call.prototype.register = function (obs) {
-        this.observers.push(obs);
+        this._observers.push(obs);
     }
     Call.prototype.makeAPhone = function () {
         return `전화 신호를 보냅니다...`;
     };
     Call.prototype.pickUpPhone = function () {
         console.log("전화 신호를 받았습니다...");
-        this.observers.forEach((obs) => {
+        this._observers.forEach((obs) => {
             try {
                 console.log(obs.callUpdate());
             } catch {
@@ -28,8 +28,9 @@ export const call = (function () {
         console.log("[전화]를 실행합니다.");
     };
     Call.prototype.infoApp = function () {
-        return this.info;
+        return this._info;
     };
+
     return Call;
 })();
 
@@ -39,6 +40,7 @@ export const callObserver = (function () {
 
     CallObserver.prototype.callUpdate = function () {
     };
+
     return CallObserver;
 })();
 

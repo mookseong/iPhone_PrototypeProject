@@ -9,5 +9,6 @@ export const memo = (function () {
     Memo.prototype.infoApp = function () {
         return this.info;
     };
+
     return Memo;
 })();

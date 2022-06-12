@@ -1,16 +1,16 @@
 export const batterySubject = (function () {
     function BatteryObserver() {
-        this.observers = [];
+        this._observers = [];
     }
 
     BatteryObserver.prototype.subscribe = function (observer) {
-        this.observers.push(observer);
+        this._observers.push(observer);
     };
     BatteryObserver.prototype.unsubscribe = function (observer) {
-        this.observers.splice(this.observers.indexOf(observer), 1);
+        this._observers.splice(this._observers.indexOf(observer), 1);
     };
     BatteryObserver.prototype.notifyAll = function (changeOfState) {
-        this.observers.forEach((observer) => observer.notify(changeOfState));
+        this._observers.forEach((observer) => observer.notify(changeOfState));
     };
 
     return BatteryObserver
@@ -18,19 +18,19 @@ export const batterySubject = (function () {
 
 export const battery = (function () {
     function Battery(Subject) {
-        this.subject = Subject
-        this.state = 100
+        this._subject = Subject
+        this._state = 100
     }
 
     Battery.prototype.setState = function (state) {
-        this.state = state
+        this._state = state
         this.stateCheck();
     };
     Battery.prototype.getState = function () {
-        return this.state;
+        return this._state;
     };
     Battery.prototype.stateCheck = function () {
-        if (this.state <= 20) this.subject.notifyAll(this.state);
+        if (this._state <= 20) this._subject.notifyAll(this._state);
     };
 
     return Battery

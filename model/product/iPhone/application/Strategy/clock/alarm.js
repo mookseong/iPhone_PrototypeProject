@@ -9,5 +9,6 @@ export const alarm = (function () {
     Alarm.prototype.infoApp = function () {
         return this._info;
     };
+
     return Alarm;
 })();

@@ -9,5 +9,6 @@ export const gallery = (function () {
     Gallery.prototype.infoApp = function () {
         return this.info;
     };
+
     return Gallery;
 })();

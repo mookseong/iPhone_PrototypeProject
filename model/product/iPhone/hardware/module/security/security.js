@@ -1,17 +1,17 @@
 export const security = (function () {
     function Strategy(state) {
-        this.strategy = state;
+        this._strategy = state;
         this.securityInfo();
     }
 
     Strategy.prototype.register = function () {
-        this.strategy.register();
+        this._strategy.register();
     };
     Strategy.prototype.certify = function () {
-        this.strategy.certify();
+        this._strategy.certify();
     };
     Strategy.prototype.securityInfo = function () {
-        this.strategy.securityInfo()
+        this._strategy.securityInfo()
     }
 
     return Strategy;
