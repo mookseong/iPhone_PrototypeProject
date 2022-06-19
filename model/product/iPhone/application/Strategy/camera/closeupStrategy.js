@@ -1,10 +1,10 @@
-export const closeupStrategy = (function () {
-    function CloseUpStrategy() {
+export const closeUpCamera = (function () {
+    function CloseUpCamera() {
     }
 
-    CloseUpStrategy.prototype.execute = function () {
+    CloseUpCamera.prototype.shot = function () {
         console.log("클로즈업 모드로 촬영합니다.");
     };
 
-    return CloseUpStrategy;
+    return CloseUpCamera;
 })();

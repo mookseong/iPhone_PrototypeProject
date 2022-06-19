@@ -1,36 +1,20 @@
-import {closeupStrategy} from "./closeupStrategy.js";
-import {panoramaStrategy} from "./panoramaStrategy.js";
-import {videoStrategy} from "./videoStrategy.js";
-import {normalStrategy} from "./normalStrategy.js";
-
-export const cameraStrategy = (function () {
-    function CameraStrategy(strategy) {
+export const camera = (function () {
+    function Camera(strategy) {
         this._info = "[카메라]";
+    };
+    Camera.prototype.setStrategy = function(strategy) {
         this._strategy = strategy;
-    }
-
-    CameraStrategy.prototype.setCloseUp = function () {
-        this._strategy = new closeupStrategy();
     };
-    CameraStrategy.prototype.setPanorama = function () {
-        this._strategy = new panoramaStrategy();
+    Camera.prototype.shot = function () {
+        this._strategy.shot();
     };
-    CameraStrategy.prototype.setVideo = function () {
-        this._strategy = new videoStrategy();
-    };
-    CameraStrategy.prototype.setNormal = function () {
-        this._strategy = new normalStrategy();
-    };
-    CameraStrategy.prototype.execute = function () {
-        this._strategy.execute();
-    };
-    CameraStrategy.prototype.startApp = function () {
+    Camera.prototype.startApp = function () {
         console.log("[카메라]를 실행합니다.");
-        this.execute();
+        this.shot();
     };
-    CameraStrategy.prototype.infoApp = function () {
+    Camera.prototype.infoApp = function () {
         return this._info;
     };
 
-    return CameraStrategy;
+    return Camera;
 })();

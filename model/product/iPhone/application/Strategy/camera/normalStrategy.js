@@ -1,10 +1,11 @@
-export const normalStrategy = (function () {
-    function NormalStrategy() {
+export const normalCamera = (function () {
+    function NormalCamera() {
     }
 
-    NormalStrategy.prototype.execute = function () {
+    NormalCamera.prototype.shot = function () {
         console.log("기본 모드로 촬영합니다.");
     };
 
-    return NormalStrategy;
+    return NormalCamera;
 })();
+

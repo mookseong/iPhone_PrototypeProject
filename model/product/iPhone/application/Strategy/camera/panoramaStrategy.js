@@ -1,9 +1,10 @@
-export const panoramaStrategy = (function () {
-    function PanoramaStrategy() {
+export const panoramaCamera = (function () {
+    function PanoramaCamera() {
     }
 
-    PanoramaStrategy.prototype.execute = function () {
+    PanoramaCamera.prototype.shot = function () {
         console.log("파노라마 모드로 촬영합니다.");
     };
-    return PanoramaStrategy;
+    return PanoramaCamera;
 })();
+

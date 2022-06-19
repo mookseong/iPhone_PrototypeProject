@@ -3,8 +3,8 @@ import {calender} from "./Strategy/calender.js";
 import {call} from "./Strategy/call/call.js";
 import {gallery} from "./Strategy/gallery.js";
 import {memo} from "./Strategy/memo.js";
-import {normalStrategy} from "./Strategy/camera/normalStrategy.js";
-import {cameraStrategy} from "./Strategy/camera/camera.js";
+import {normalCamera} from "./Strategy/camera/normalStrategy.js";
+import {camera} from "./Strategy/camera/camera.js";
 import {alarm} from "./Strategy/clock/alarm.js";
 import {stopwatch} from "./Strategy/clock/stopwatch.js";
 import {timer} from "./Strategy/clock/timer.js";
@@ -25,12 +25,12 @@ const commander = (function () {     // appSwitcher
     };
     Commander.prototype.infoMultiTask = function () {
         if (this._runApp != null) {
-            console.log("현재 실행중인 프로그램 : " + this._runApp.infoApp());
+            console.log("현재 실행 중인 프로그램 : " + this._runApp.infoApp());
         } else if (this._runApp == null) {
-            console.log("현재 실행중인 프로그램 : [없음]");
+            console.log("현재 실행 중인 프로그램 : [없음]");
         }
         this._stayApp.forEach(function (commander) {
-            console.log("대기중인 프로그램 : " + commander.infoApp());
+            console.log("대기 중인 프로그램 : " + commander.infoApp());
         });
     };
     Commander.prototype.closeStayApp = function () {
@@ -58,7 +58,7 @@ export const home = (function () {
         this._commander.closeStayApp();
     };
     Home.prototype.openCamera = function () {
-        this._commander.setApp(new cameraStrategy(new normalStrategy()))
+        this._commander.setApp(new camera(new normalCamera()))
     };
     Home.prototype.openBrowser = function () {
         this._commander.setApp(new browser());
