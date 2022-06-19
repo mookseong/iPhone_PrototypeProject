@@ -2,7 +2,7 @@ import {mute} from "./mute.js";
 import {volume} from "./volume.js";
 import {vibration} from "./vibration.js";
 
-export const sound_strategy = (function () {
+export const sound = (function () {
     function Strategy() {
         this._strategy = null;
     }

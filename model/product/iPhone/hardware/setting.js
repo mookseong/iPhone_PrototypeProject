@@ -2,7 +2,7 @@ import {battery, batterySubject} from "./module/battery/battery.js";
 import {wifi} from "./module/wifi/wifi.js";
 import {bluetooth} from "./module/bluetooth/bluetooth.js";
 import {screen} from "./module/srcreen/screen.js";
-import {sound_strategy} from "./module/sound/sound_strategy.js";
+import {sound} from "./module/sound/sound.js";
 import {faceId} from "./module/security/faceId.js";
 import {security} from "./module/security/security.js";
 
@@ -14,7 +14,7 @@ export const setting = (function () {
         this._bluetooth = new bluetooth();
         this._screen = new screen();
         this._screenService = false;
-        this._sound = new sound_strategy();
+        this._sound = new sound();
         this._security = new security(new faceId());
         this.startService();
     }
